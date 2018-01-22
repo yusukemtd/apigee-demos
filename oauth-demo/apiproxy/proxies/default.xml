@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="authorizationcode">
+            <Description>OAuth 2.0 Authorization Endpoint.</Description>
+            <Request>
+                <Step>
+                    <Name>SetAuthorizationCodeParameters</Name>
+                </Step>
+                <Step>
+                    <Name>GenerateAuthorizationCode</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/authorizationcode") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="token">
+            <Description>OAuth 2.0 Token Endpoint.</Description>
+            <Request>
+                <Step>
+                    <Name>SetAccessTokenParameters</Name>
+                </Step>
+                <Step>
+                    <Name>BasicAuthentication</Name>
+                </Step>
+                <Step>
+                    <Name>GenerateAccessToken</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/token")</Condition>
+        </Flow>
+        <Flow name="callbackcode">
+            <Description>OAuth 2.0 Authorization Code Redirect Endpoint.</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/callback")</Condition>
+        </Flow>
+        <Flow name="retrievecode">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>GetOAuth20InfoByAuthorizationCode</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>SetAuthorizationCodeResults</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/retrievecode")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/oauth-demo</BasePath>
+        <Properties/>
+        <VirtualHost>secure</VirtualHost>
+        <VirtualHost>default</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="noroute"/>
+</ProxyEndpoint>

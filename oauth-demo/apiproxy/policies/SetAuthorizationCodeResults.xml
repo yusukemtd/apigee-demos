@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="SetAuthorizationCodeResults">
+    <DisplayName>SetAuthorizationCodeResults</DisplayName>
+    <Set>
+        <FormParams>
+            <FormParam name="oauth-code">{oauthv2authcode.GetOAuth20InfoByAuthorizationCode.code}</FormParam>
+            <FormParam name="oauth-client_id">{oauthv2authcode.GetOAuth20InfoByAuthorizationCode.client_id}</FormParam>
+            <FormParam name="oauth-access_token">{oauthv2authcode.GetOAuth20InfoByAuthorizationCode.access_token}</FormParam>
+        </FormParams>
+    </Set>
+    <AssignVariable>
+        <Name>name</Name>
+        <Value/>
+        <Ref/>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

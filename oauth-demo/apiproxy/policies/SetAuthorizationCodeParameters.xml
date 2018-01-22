@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="SetAuthorizationCodeParameters">
+    <DisplayName>SetAuthorizationCodeParameters</DisplayName>
+    <Set>
+        <QueryParams>
+            <QueryParam name="response_type">code</QueryParam>
+            <QueryParam name="client_id">YOUR APP CONSUMER KEY</QueryParam>
+            <QueryParam name="redirect_uri">http://{ORG}-{ENV}-test.apigee.net/oauth-demo/callback</QueryParam>
+            <QueryParam name="grant_type">authorization_code</QueryParam>
+            <QueryParam name="state">HjoiuKJH32</QueryParam>
+        </QueryParams>
+    </Set>
+    <AssignVariable>
+        <Name>name</Name>
+        <Value/>
+        <Ref/>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="2" name="oauth-demo">
+    <Basepaths>/oauth-demo</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1516640205566</CreatedAt>
+    <CreatedBy>yusuke.madd@gmail.com</CreatedBy>
+    <Description></Description>
+    <DisplayName>oauth-demo</DisplayName>
+    <LastModifiedAt>1516641383983</LastModifiedAt>
+    <LastModifiedBy>yusuke.madd@gmail.com</LastModifiedBy>
+    <Policies>
+        <Policy>BasicAuthentication</Policy>
+        <Policy>GenerateAccessToken</Policy>
+        <Policy>GenerateAuthorizationCode</Policy>
+        <Policy>GetOAuth20InfoByAuthorizationCode</Policy>
+        <Policy>SetAccessTokenParameters</Policy>
+        <Policy>SetAuthorizationCodeParameters</Policy>
+        <Policy>SetAuthorizationCodeResults</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints/>
+    <validate>false</validate>
+</APIProxy>

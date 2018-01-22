@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="GenerateAuthorizationCode">
+    <DisplayName>GenerateAuthorizationCode</DisplayName>
+    <Operation>GenerateAuthorizationCode</Operation>
+    <SupportedGrantTypes/>
+    <ResponseType>request.queryparam.response_type</ResponseType>
+    <ClientId>request.queryparam.client_id</ClientId>
+    <RedirectUri>request.queryparam.redirect_uri</RedirectUri>
+    <GrantType>request.queryparam.grant_type</GrantType>
+    <Scope/>
+    <State>request.queryparam.state</State>
+    <ExpiresIn>3600000</ExpiresIn>
+    <RefreshTokenExpiresIn>3600000</RefreshTokenExpiresIn>
+    <GenerateResponse enabled="true"/>
+    <Tokens/>
+</OAuthV2>
